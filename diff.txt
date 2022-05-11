@@ -1,0 +1,14 @@
+In line number 224 of your output:
+The output should be:
+01072 Nugget Smee     (388)689-3085 (WORK)
+   ^
+But your output is: 
+01024 Nugget Smee     (388)689-3085 (WORK)
+   ^
+
+Unmatched character details:
+The character in column 4 is supposed to be:
+  [7] ASCII code(55)
+but you printed
+  [2] ASCII code(50)
+

@@ -1,0 +1,99 @@
+*****************************************************************************
+                               Reflection
+                             Workshop - #A1MS3
+Full Name  : WAI CHUNG, SO 
+Student ID#: 147446215
+Email      : wso8@myseneca.ca
+Section    : NFF
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+*****************************************************************************
+1. This milestone required you to create additional functions that were not specified or provided for you. Briefly describe three functions you created and include the purpose and value those functions contributed towards the application. Organize your answer for each function by first including the function prototype (not the definition) followed by your explanation. (Minimum: 200 words)
+
+int findLastDayOfMonth(int year, int month);
+
+In the program, we need the user to input for the appointment dat
+The last day number is different for different months.
+For Jan, Mar, May, July, August, October and December, it is 31.
+While Apr, Jun, Sep and Nov, it is 30.
+For February, it is 28 normally and 29 on leap years.
+This function is used to find the last day of a given year and given month. 
+This funciton use if and else if to differentiate them.
+It will check the input year if it is a leap year.
+Base on that, it will check the input month for the last day of the month.
+This function is with input year and month as parameters and returns the last day of month as integer.
+
+
+void sortAppointment(struct ClinicData data);
+
+In the function, the appointments are listed on asscending order based on the appointment year, month, day, hour and min.
+However, the original data is not in this order.
+This function is used to sort appointment date in ascending order.
+The input parameter is the ClinicData data.
+It will compare Time struct and Date struct inside data between its next elements.
+If the present element (i) is smaller than the next element (i+1), it will pass.
+Else if the element (i) is larger than the next element (i+1), it will swap with the temp data for storage.
+Then it will go back to previous element (i-1) to compare with the present element (i).
+Else if the elements (i) and (i+1) is equivalent, it will compare the next factor.
+The comparing factor sequences is as follow: year, month, day, hour and min.
+This comparison will continue until the full struct is checked.
+
+
+int checkIfTwoAppointmentDuplicated(const struct Appointment recordAppoint, const struct Appointment inputAppoint);
+
+In the program, we need to check if the timeslot is available for the new appointment.
+However, in Language C, we cannot use '==' or 'strcmp()' function to compare between structs
+This user defined function is used to check if the 2 appointment records have the same year, month, day, hour and min.
+The input is two Appointment structs.
+If the year, month, day, hour and min between 2 structs are the same, it will return 1 as True.
+Or return 0 as false if the 2 structs are not totally equal in year, month, day, hour and min.
+
+2. The "addAppointment" function must perform many operations. How many lines of code did you use for this function? How many lines did you save by applying pattern recognition and the use of functions? Identify all the sections of logic you were able to consolidate into useful functions to help with readability and maintainability of the code. (Minimum: 200 words)
+
+There are 76 lines of codes for "addAppointment" function. 
+
+It called the "inputIntRange" for 6 times. 
+It takes 21 lines originally for each of "inputIntRange" function.
+However, each "inputIntRange" function also includeds the "inputInt" function which has 21 lines.
+And "inputInt" function has combined 8 lines of "clearInputBuffer"
+Totally there are ( (21-1) + (21-1) + 8 ) = 48 lines of codes if we breakdown the "inputIntRange" into details.
+And now it can be done in a single line.
+So it saved 6 * (48-1) = 282 lines codes for the "inputIntRange" function.
+
+With the help of user defined functions, it helps not only reduce the line of codes but also increase the readability and maintainability of the code.
+
+Reader of the codes doesnt need to go into the detail everytime for the function "inputIntRange", "inputInt" or "clearInputBuffer".
+The can know from its name for what is the function doing and what is expected for their return.
+It helps the reader easily focus on what the function is doing instead of getting tired of reading the duplicated codes.
+
+When we compile and run the code, we can tracy the errors more easily and quickly if there are any errors or unexpected outcome.
+we can quickly locate the input before and the wrong output. It is because we break the codes into parts, reduce the redunduncy, formulate it and modulized it.
+
+3. This milestone demanded a concerted effort in time management to insure you could complete the work on-time. Breakdown how you spent your week of development and include each function/section of logic you worked on describing the overall success/challenges you had along the way. (Minimum: 200 words)
+
+It is important to have the planning on doing this milestone.
+First of all I planned the stages of my works based on the given deadline.
+I have briefly go through the instruction pdf first to know what is going to do.
+Then I read the output files to have a brief idea on the expected inputs and expected outputs.
+After that, I go into the details of the assigment for the codes.
+
+I went throught the main function and see what is happening.
+Later, I have focused on the functions one by one.
+I will try to know the purpose of the function
+At the same time, I will check at what siutation this functions will be called, what is the input and what is the expected output.
+Then, I will draft for the logic of the function.
+After that, I will try to test it and refine it.
+
+After all functions are completed, I will compile and run it.
+If there are any error, I will go into the details of it including the type of errors, the reason for it.
+I will try to fix it if I can or rewrite it if it is wrong in logic.
+
+After completeing the coding, I do the reflect and submit it to the matrix.
+
+The most challenging part for the milestone is the sorting functions as it needs to be clear minded on what the function is doing.
+I need to draft for the algorithum for the sorting it in order.
+It is necessary to know under different situation (larger, smaller and equal), what the function should do.
+Besides, the function also need to go only forwards but also backwards to ensure every elements is in order.
